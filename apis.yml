@@ -1,7 +1,27 @@
 aid: jadu
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/jadu.png
 name: Jadu
-description: Jadu is a company surfaced as a portfolio company of general-catalyst and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Jadu is a General Catalyst-backed company tracked in the API Evangelist network. Its public
+  site at jadu.io presents JADU as AI-powered crypto trading automation built on the Hyperliquid
+  decentralized exchange. As of this enrichment pass the site is a single-page marketing shell
+  with no public developer surface: no developer portal, API documentation, OpenAPI/AsyncAPI
+  specification, SDKs, CLI, Postman collection, changelog, pricing page, status page, GitHub
+  organization, or /.well-known discovery documents were found (the host returns its index page
+  for every path, so probed well-known and llms.txt hits are SPA catch-alls, not real documents).
+  This profile therefore carries identity and a domain-security probe only; no API artifacts could
+  be honestly derived because the provider publishes no machine-readable API surface to ground them.
 url: https://raw.githubusercontent.com/api-evangelist/jadu/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +29,35 @@ x-backed-by:
 - general-catalyst
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment-note: >-
+  jadu.io resolves and is live but serves only a Vite single-page marketing shell whose meta
+  description reads "JADU — AI-powered crypto trading automation on Hyperliquid." No developer/API
+  surface located during enrichment (2026-07-19). Web search budget was exhausted, so the General
+  Catalyst provenance is carried from the portfolio stub and not independently re-verified here.
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Cryptocurrency
+- Trading
+- Artificial Intelligence
+- Automation
+- Hyperliquid
+- Decentralized Finance
+common:
+- type: DomainSecurity
+  url: security/jadu-domain-security.yml
+- type: Website
+  url: https://jadu.io
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
